@@ -1,0 +1,29 @@
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# Thumbnails
+._*
+
+# Files that might appear in the root of a volume
+.DocumentRevisions-V100
+.fseventsd
+.Spotlight-V100
+.TemporaryItems
+.Trashes
+.VolumeIcon.icns
+.com.apple.timemachine.donotpresent
+
+# Arquivos HTML baixados acidentalmente
+*.jpg.html
+*.png.html
+
+# IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# Instruções (não necessário no repo)
+INSTRUCOES.txt

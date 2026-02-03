@@ -1,0 +1,655 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Engenho do Pão - Padaria, Confeitaria e Café em Porto Alegre. Há mais de 20 anos oferecendo os melhores pães, bolos, tortas e salgados da região de Chácara das Pedras.">
+    <meta name="keywords" content="padaria porto alegre, confeitaria, café, pão de queijo, bolos, tortas, Chácara das Pedras">
+    <title>Engenho do Pão | Padaria, Confeitaria e Café em Porto Alegre</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Header / Navegação -->
+    <header class="header">
+        <nav class="nav container">
+            <a href="#" class="logo">
+                <img src="images/logo.png" alt="Engenho do Pão" class="logo-img">
+            </a>
+            <ul class="nav-menu">
+                <li><a href="#sobre">Sobre</a></li>
+                <li><a href="#galeria">Galeria</a></li>
+                <li><a href="#cardapio">Cardápio</a></li>
+                <li><a href="#depoimentos">Depoimentos</a></li>
+                <li><a href="#contato">Contato</a></li>
+            </ul>
+            <a href="https://wa.me/5551981171300" class="btn btn-primary nav-cta" target="_blank">Encomendas</a>
+            <button class="nav-toggle" aria-label="Menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero hero-with-image" style="background-image: url('images/fachada.jpg');">
+        <div class="hero-overlay"></div>
+        <div class="hero-content container">
+            <div class="hero-glass">
+                <img src="images/logo.png" alt="Engenho do Pão" class="logo-img-large">
+                <span class="hero-badge">Desde 2003 • Chácara das Pedras</span>
+                <h1 class="hero-title">O sabor artesanal<br>que conquista Porto Alegre</h1>
+                <p class="hero-subtitle">Há mais de 20 anos preparando com carinho os melhores pães, bolos, tortas e salgados da região. Uma tradição de qualidade que passa de geração em geração.</p>
+                <div class="hero-cta">
+                    <a href="#cardapio" class="btn btn-primary btn-lg">Ver Cardápio</a>
+                    <a href="#contato" class="btn btn-outline btn-lg">Como Chegar</a>
+                </div>
+                <div class="hero-stats">
+                    <div class="stat">
+                        <span class="stat-number">20+</span>
+                        <span class="stat-label">Anos de tradição</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat-number">8.1</span>
+                        <span class="stat-label">Avaliação Foursquare</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat-number">2000+</span>
+                        <span class="stat-label">Clientes satisfeitos</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sobre Section -->
+    <section id="sobre" class="sobre section">
+        <div class="container">
+            <div class="sobre-grid">
+                <div class="sobre-content">
+                    <span class="section-badge">Nossa História</span>
+                    <h2 class="section-title">Uma paixão que virou tradição</h2>
+                    <p class="sobre-text">
+                        Fundada em 2003, a <strong>Padaria e Confeitaria Engenho do Pão</strong> nasceu do sonho de criar um espaço onde cada produto contasse uma história de dedicação e amor pela arte da panificação.
+                    </p>
+                    <p class="sobre-text">
+                        Localizada no coração do bairro Chácara das Pedras, nossa padaria se tornou referência em Porto Alegre por oferecer produtos artesanais de qualidade incomparável. Cada pão, cada bolo, cada salgado é preparado com ingredientes selecionados e receitas que carregam o sabor da tradição gaúcha.
+                    </p>
+                    <p class="sobre-text">
+                        Reconhecida como uma das <strong>10 melhores padarias de Porto Alegre</strong> pelo Foursquare, temos orgulho de fazer parte da rotina de milhares de famílias da região.
+                    </p>
+                    <div class="sobre-features">
+                        <div class="feature">
+                            <span class="feature-icon">✓</span>
+                            <span>Produtos frescos diariamente</span>
+                        </div>
+                        <div class="feature">
+                            <span class="feature-icon">✓</span>
+                            <span>Ingredientes selecionados</span>
+                        </div>
+                        <div class="feature">
+                            <span class="feature-icon">✓</span>
+                            <span>Receitas artesanais</span>
+                        </div>
+                        <div class="feature">
+                            <span class="feature-icon">✓</span>
+                            <span>Encomendas personalizadas</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="sobre-image">
+                    <img src="images/interior.jpg" alt="Interior da Padaria Engenho do Pão">
+                    <div class="sobre-image-badge">
+                        <span class="badge-number">20+</span>
+                        <span class="badge-text">Anos de tradição</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Galeria Section -->
+    <section id="galeria" class="galeria section-dark">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-badge">Nossa Vitrine</span>
+                <h2 class="section-title">Conheça nossas delícias</h2>
+                <p class="section-subtitle">Imagens reais dos nossos produtos preparados com carinho todos os dias</p>
+            </div>
+            <div class="galeria-grid">
+                <!-- Fotos reais da padaria -->
+                <div class="galeria-item large">
+                    <img src="images/vitrine-doces.jpg" alt="Vitrine de doces e sobremesas">
+                    <div class="galeria-item-overlay">
+                        <span>Vitrine de Doces</span>
+                    </div>
+                </div>
+                <div class="galeria-item">
+                    <img src="images/doguinhos.jpg" alt="Doguinhos - Mini cachorros-quentes">
+                    <div class="galeria-item-overlay">
+                        <span>Doguinhos</span>
+                    </div>
+                </div>
+                <div class="galeria-item">
+                    <img src="images/fachada.jpg" alt="Fachada da Padaria Engenho do Pão">
+                    <div class="galeria-item-overlay">
+                        <span>Nossa Loja</span>
+                    </div>
+                </div>
+                <div class="galeria-item">
+                    <img src="images/interior.jpg" alt="Interior aconchegante da padaria">
+                    <div class="galeria-item-overlay">
+                        <span>Ambiente</span>
+                    </div>
+                </div>
+                <!-- Fotos adicionais de demonstração -->
+                <div class="galeria-item">
+                    <img src="https://images.unsplash.com/photo-1509440159596-0249088772ff?w=600&q=80" alt="Pães artesanais frescos">
+                    <div class="galeria-item-overlay">
+                        <span>Pães Artesanais</span>
+                    </div>
+                </div>
+                <div class="galeria-item">
+                    <img src="https://images.unsplash.com/photo-1555507036-ab1f4038808a?w=600&q=80" alt="Croissants dourados">
+                    <div class="galeria-item-overlay">
+                        <span>Croissants</span>
+                    </div>
+                </div>
+                <div class="galeria-item">
+                    <img src="https://images.unsplash.com/photo-1586985289688-ca3cf47d3e6e?w=600&q=80" alt="Pão de queijo mineiro">
+                    <div class="galeria-item-overlay">
+                        <span>Pão de Queijo</span>
+                    </div>
+                </div>
+                <div class="galeria-item">
+                    <img src="https://images.unsplash.com/photo-1578985545062-69928b1d9587?w=600&q=80" alt="Bolo de chocolate decorado">
+                    <div class="galeria-item-overlay">
+                        <span>Bolos Decorados</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Especialidades Section -->
+    <section id="especialidades" class="especialidades section">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-badge">Especialidades</span>
+                <h2 class="section-title">O que nos torna especiais</h2>
+                <p class="section-subtitle">Produtos que conquistaram o paladar dos porto-alegrenses</p>
+            </div>
+            <div class="especialidades-grid">
+                <div class="especialidade-card featured">
+                    <div class="card-icon">🧀</div>
+                    <h3>Pão de Queijo</h3>
+                    <p>Nosso famoso pão de queijo é considerado pelos clientes como "o melhor de Porto Alegre". Crocante por fora, macio por dentro, feito com queijo minas de qualidade.</p>
+                    <span class="card-badge">Mais vendido</span>
+                </div>
+                <div class="especialidade-card">
+                    <div class="card-icon">🌭</div>
+                    <h3>Doguinhos</h3>
+                    <p>Mini cachorros-quentes que são sucesso absoluto. Perfeitos para lanches rápidos, festas ou um agrado especial para as crianças.</p>
+                </div>
+                <div class="especialidade-card">
+                    <div class="card-icon">🎂</div>
+                    <h3>Bolo Indiano</h3>
+                    <p>Uma receita exclusiva que encanta pelo sabor único. Nossos clientes dizem: "O bolo indiano é simplesmente delicioso!"</p>
+                </div>
+                <div class="especialidade-card">
+                    <div class="card-icon">🥧</div>
+                    <h3>Torta Marta Rocha</h3>
+                    <p>Um clássico da confeitaria brasileira, preparada com massa crocante, recheio cremoso e cobertura de amêndoas caramelizadas.</p>
+                </div>
+                <div class="especialidade-card">
+                    <div class="card-icon">🥐</div>
+                    <h3>Croissants</h3>
+                    <p>Folhados e crocantes, nossos croissants são preparados com manteiga de qualidade. Disponíveis naturais ou recheados com chocolate.</p>
+                </div>
+                <div class="especialidade-card">
+                    <div class="card-icon">🍰</div>
+                    <h3>Torta Prestígio</h3>
+                    <p>Chocolate e coco numa combinação irresistível. Perfeita para sobremesas especiais e comemorações em família.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Cardápio Section -->
+    <section id="cardapio" class="cardapio section">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-badge">Nosso Cardápio</span>
+                <h2 class="section-title">Delícias para todos os gostos</h2>
+                <p class="section-subtitle">Produtos frescos preparados diariamente com ingredientes selecionados</p>
+            </div>
+
+            <div class="cardapio-tabs">
+                <button class="tab-btn active" data-tab="paes">Pães</button>
+                <button class="tab-btn" data-tab="bolos">Bolos & Tortas</button>
+                <button class="tab-btn" data-tab="salgados">Salgados</button>
+                <button class="tab-btn" data-tab="doces">Doces</button>
+            </div>
+
+            <div class="cardapio-content">
+                <!-- Pães -->
+                <div class="tab-content active" id="paes">
+                    <div class="menu-grid">
+                        <div class="menu-item">
+                            <div class="menu-item-header">
+                                <h4>Pão Colonial</h4>
+                                <span class="price">R$ 29,90/kg</span>
+                            </div>
+                            <p>Pão tradicional gaúcho, perfeito para o café da manhã em família</p>
+                        </div>
+                        <div class="menu-item">
+                            <div class="menu-item-header">
+                                <h4>Pão de Milho</h4>
+                                <span class="price">R$ 34,40/kg</span>
+                            </div>
+                            <p>Macio e levemente adocicado, feito com fubá de qualidade</p>
+                        </div>
+                        <div class="menu-item">
+                            <div class="menu-item-header">
+                                <h4>Baguete Artesanal</h4>
+                                <span class="price">R$ 8,90/un</span>
+                            </div>
+                            <p>Crosta crocante e miolo aerado, ideal para acompanhamentos</p>
+                        </div>
+                        <div class="menu-item">
+                            <div class="menu-item-header">
+                                <h4>Pão Folhado</h4>
+                                <span class="price">R$ 12,90/un</span>
+                            </div>
+                            <p>Camadas delicadas de massa folhada, perfeito para lanches</p>
+                        </div>
+                        <div class="menu-item">
+                            <div class="menu-item-header">
+                                <h4>Pão Recheado</h4>
+                                <span class="price">R$ 45,00/kg</span>
+                            </div>
+                            <p>Variedade de recheios: calabresa, frango, queijo e presunto</p>
+                        </div>
+                        <div class="menu-item">
+                            <div class="menu-item-header">
+                                <h4>Croissant</h4>
+                                <span class="price">R$ 9,50/un</span>
+                            </div>
+                            <p>Natural ou com chocolate belga, crocante e amanteigado</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Bolos & Tortas -->
+                <div class="tab-content" id="bolos">
+                    <div class="menu-grid">
+                        <div class="menu-item">
+                            <div class="menu-item-header">
+                                <h4>Bolo de Aipim com Coco</h4>
+                                <span class="price">R$ 46,00/kg</span>
+                            </div>
+                            <p>Nossa especialidade! Textura cremosa e sabor marcante</p>
+                            <span class="item-badge">Recomendado</span>
+                        </div>
+                        <div class="menu-item">
+                            <div class="menu-item-header">
+                                <h4>Bolo Indiano</h4>
+                                <span class="price">R$ 52,00/kg</span>
+                            </div>
+                            <p>Receita exclusiva com especiarias e cobertura especial</p>
+                        </div>
+                        <div class="menu-item">
+                            <div class="menu-item-header">
+                                <h4>Torta Marta Rocha</h4>
+                                <span class="price">R$ 89,00</span>
+                            </div>
+                            <p>Clássico da confeitaria brasileira com amêndoas</p>
+                        </div>
+                        <div class="menu-item">
+                            <div class="menu-item-header">
+                                <h4>Torta Prestígio</h4>
+                                <span class="price">R$ 79,00</span>
+                            </div>
+                            <p>Chocolate com coco, irresistível para os amantes de doces</p>
+                        </div>
+                        <div class="menu-item">
+                            <div class="menu-item-header">
+                                <h4>Bolo de Cenoura</h4>
+                                <span class="price">R$ 38,00/kg</span>
+                            </div>
+                            <p>Com generosa calda de chocolate caseira</p>
+                        </div>
+                        <div class="menu-item">
+                            <div class="menu-item-header">
+                                <h4>Cuca Alemã</h4>
+                                <span class="price">R$ 42,00/kg</span>
+                            </div>
+                            <p>Tradição gaúcha com farofa crocante por cima</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Salgados -->
+                <div class="tab-content" id="salgados">
+                    <div class="menu-grid">
+                        <div class="menu-item">
+                            <div class="menu-item-header">
+                                <h4>Pão de Queijo</h4>
+                                <span class="price">R$ 5,90/un</span>
+                            </div>
+                            <p>O melhor de Porto Alegre! Crocante e com muito queijo</p>
+                            <span class="item-badge">Campeão de vendas</span>
+                        </div>
+                        <div class="menu-item">
+                            <div class="menu-item-header">
+                                <h4>Doguinho</h4>
+                                <span class="price">R$ 6,50/un</span>
+                            </div>
+                            <p>Mini cachorro-quente, sucesso entre crianças e adultos</p>
+                        </div>
+                        <div class="menu-item">
+                            <div class="menu-item-header">
+                                <h4>Pastel de Forno</h4>
+                                <span class="price">R$ 8,90/un</span>
+                            </div>
+                            <p>Palmito, carne ou frango. Massa crocante e recheio generoso</p>
+                        </div>
+                        <div class="menu-item">
+                            <div class="menu-item-header">
+                                <h4>Empada de Palmito</h4>
+                                <span class="price">R$ 7,90/un</span>
+                            </div>
+                            <p>Massa amanteigada com recheio cremoso de palmito</p>
+                        </div>
+                        <div class="menu-item">
+                            <div class="menu-item-header">
+                                <h4>Quiche</h4>
+                                <span class="price">R$ 12,90/fatia</span>
+                            </div>
+                            <p>Lorraine, alho-poró ou espinafre. Servido quente</p>
+                        </div>
+                        <div class="menu-item">
+                            <div class="menu-item-header">
+                                <h4>Salgados Fritos (Cento)</h4>
+                                <span class="price">R$ 120,00</span>
+                            </div>
+                            <p>Coxinha, risole e bolinha de queijo. Ideal para festas</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Doces -->
+                <div class="tab-content" id="doces">
+                    <div class="menu-grid">
+                        <div class="menu-item">
+                            <div class="menu-item-header">
+                                <h4>Brigadeiro Gourmet</h4>
+                                <span class="price">R$ 4,50/un</span>
+                            </div>
+                            <p>Tradicional, branquinho ou prestígio</p>
+                        </div>
+                        <div class="menu-item">
+                            <div class="menu-item-header">
+                                <h4>Queijadinha</h4>
+                                <span class="price">R$ 5,90/un</span>
+                            </div>
+                            <p>Doce tradicional português com coco e queijo</p>
+                        </div>
+                        <div class="menu-item">
+                            <div class="menu-item-header">
+                                <h4>Cheesecake</h4>
+                                <span class="price">R$ 14,90/fatia</span>
+                            </div>
+                            <p>Cremoso, com calda de frutas vermelhas</p>
+                        </div>
+                        <div class="menu-item">
+                            <div class="menu-item-header">
+                                <h4>Strudel de Maçã</h4>
+                                <span class="price">R$ 12,90/fatia</span>
+                            </div>
+                            <p>Massa folhada com recheio de maçã e canela</p>
+                        </div>
+                        <div class="menu-item">
+                            <div class="menu-item-header">
+                                <h4>Docinhos (Cento)</h4>
+                                <span class="price">R$ 150,00</span>
+                            </div>
+                            <p>Sortidos para festas e eventos especiais</p>
+                        </div>
+                        <div class="menu-item">
+                            <div class="menu-item-header">
+                                <h4>Biscoitos Amanteigados</h4>
+                                <span class="price">R$ 32,00/kg</span>
+                            </div>
+                            <p>Receita tradicional, derretem na boca</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="cardapio-cta">
+                <p>Aceitamos encomendas para festas e eventos</p>
+                <a href="https://wa.me/5551981171300" class="btn btn-primary" target="_blank">
+                    <span>📱</span> Fazer Encomenda via WhatsApp
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Depoimentos Section -->
+    <section id="depoimentos" class="depoimentos section section-dark">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-badge">Depoimentos</span>
+                <h2 class="section-title">O que nossos clientes dizem</h2>
+                <p class="section-subtitle">Avaliações reais de quem já experimentou nossas delícias</p>
+            </div>
+            <div class="depoimentos-grid">
+                <div class="depoimento-card">
+                    <div class="depoimento-rating">⭐⭐⭐⭐⭐</div>
+                    <p class="depoimento-text">"Tem o melhor pão de queijo e cachorro-quente do mundo. Certamente não vai comer pão de queijo como esse em nenhum outro lugar!"</p>
+                    <div class="depoimento-author">
+                        <div class="author-avatar">M</div>
+                        <div class="author-info">
+                            <span class="author-name">Marina S.</span>
+                            <span class="author-source">via Foursquare</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="depoimento-card">
+                    <div class="depoimento-rating">⭐⭐⭐⭐⭐</div>
+                    <p class="depoimento-text">"O bolo indiano é delicioso! Pães de queijo também são divinos! A melhor padaria e confeitaria da região."</p>
+                    <div class="depoimento-author">
+                        <div class="author-avatar">R</div>
+                        <div class="author-info">
+                            <span class="author-name">Roberto L.</span>
+                            <span class="author-source">via Google</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="depoimento-card">
+                    <div class="depoimento-rating">⭐⭐⭐⭐⭐</div>
+                    <p class="depoimento-text">"Salgados sensacionais! O atendimento é top e o bolo de aniversário que encomendei ficou incrível. Recomendo muito!"</p>
+                    <div class="depoimento-author">
+                        <div class="author-avatar">A</div>
+                        <div class="author-info">
+                            <span class="author-name">Ana Paula C.</span>
+                            <span class="author-source">via Restaurant Guru</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="depoimento-card">
+                    <div class="depoimento-rating">⭐⭐⭐⭐⭐</div>
+                    <p class="depoimento-text">"Os doguinhos são os melhores de Porto Alegre! Venho aqui há anos e a qualidade sempre se mantém. Parada obrigatória no bairro."</p>
+                    <div class="depoimento-author">
+                        <div class="author-avatar">C</div>
+                        <div class="author-info">
+                            <span class="author-name">Carlos M.</span>
+                            <span class="author-source">via Foursquare</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="depoimentos-stats">
+                <div class="rating-card">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/3d/Foursquare_logo_2013.svg/1200px-Foursquare_logo_2013.svg.png" alt="Foursquare" class="rating-logo">
+                    <span class="rating-score">8.1/10</span>
+                    <span class="rating-reviews">159 avaliações</span>
+                </div>
+                <div class="rating-card">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/53/Google_%22G%22_Logo.svg/1200px-Google_%22G%22_Logo.svg.png" alt="Google" class="rating-logo">
+                    <span class="rating-score">4.2/5</span>
+                    <span class="rating-reviews">215 avaliações</span>
+                </div>
+                <div class="rating-card">
+                    <span class="rating-icon">🍴</span>
+                    <span class="rating-score">4.1/5</span>
+                    <span class="rating-reviews">Restaurant Guru</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contato / Localização Section -->
+    <section id="contato" class="contato section">
+        <div class="container">
+            <div class="contato-grid">
+                <div class="contato-info">
+                    <span class="section-badge">Visite-nos</span>
+                    <h2 class="section-title">Venha nos conhecer</h2>
+                    <p class="contato-text">Estamos localizados no coração do bairro Chácara das Pedras, com estacionamento gratuito para sua comodidade.</p>
+
+                    <div class="contato-details">
+                        <div class="contato-item">
+                            <span class="contato-icon">📍</span>
+                            <div>
+                                <strong>Endereço</strong>
+                                <p>Praça Lima Duarte, 39<br>Chácara das Pedras<br>Porto Alegre - RS<br>CEP: 91330-380</p>
+                            </div>
+                        </div>
+                        <div class="contato-item">
+                            <span class="contato-icon">🕐</span>
+                            <div>
+                                <strong>Horário de Funcionamento</strong>
+                                <p>Segunda a Sábado<br>07h às 19h30</p>
+                            </div>
+                        </div>
+                        <div class="contato-item">
+                            <span class="contato-icon">📞</span>
+                            <div>
+                                <strong>Telefone</strong>
+                                <p><a href="tel:+555130191003">(51) 3019-1003</a></p>
+                            </div>
+                        </div>
+                        <div class="contato-item">
+                            <span class="contato-icon">📱</span>
+                            <div>
+                                <strong>WhatsApp</strong>
+                                <p><a href="https://wa.me/5551981171300" target="_blank">(51) 98117-1300</a></p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="contato-social">
+                        <a href="https://www.instagram.com/padariaengenhodopao/" target="_blank" class="social-link instagram">
+                            <span>Instagram</span>
+                            @padariaengenhodopao
+                        </a>
+                    </div>
+
+                    <div class="contato-extras">
+                        <div class="extra-item">
+                            <span>🚗</span>
+                            <span>Estacionamento gratuito (3-4 vagas)</span>
+                        </div>
+                        <div class="extra-item">
+                            <span>🛒</span>
+                            <span>Minimercado integrado</span>
+                        </div>
+                        <div class="extra-item">
+                            <span>📦</span>
+                            <span>Encomendas com entrega</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="contato-mapa">
+                    <iframe
+                        src="https://maps.google.com/maps?q=Engenho+do+Pão+Praça+Lima+Duarte+Porto+Alegre&t=&z=17&ie=UTF8&iwloc=&output=embed"
+                        width="100%"
+                        height="450"
+                        style="border:0;"
+                        allowfullscreen=""
+                        loading="lazy"
+                        referrerpolicy="no-referrer-when-downgrade"
+                        title="Localização Engenho do Pão">
+                    </iframe>
+                    <a href="https://www.google.com/maps/search/?api=1&query=Engenho+do+Pão+Praça+Lima+Duarte+Porto+Alegre"
+                       target="_blank"
+                       class="btn btn-outline btn-block">
+                        Abrir no Google Maps
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Final -->
+    <section class="cta-final">
+        <div class="container">
+            <h2>Pronto para experimentar o melhor da panificação artesanal?</h2>
+            <p>Faça sua encomenda agora ou visite nossa loja em Chácara das Pedras</p>
+            <div class="cta-buttons">
+                <a href="https://wa.me/5551981171300" class="btn btn-white btn-lg" target="_blank">
+                    📱 WhatsApp
+                </a>
+                <a href="tel:+555130191003" class="btn btn-outline-white btn-lg">
+                    📞 Ligar Agora
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <a href="#" class="logo">
+                        <img src="images/logo.png" alt="Engenho do Pão" class="logo-img" style="filter: brightness(0) invert(1);">
+                    </a>
+                    <p>Padaria, Confeitaria e Café desde 2003. Tradição e qualidade em cada produto.</p>
+                </div>
+                <div class="footer-links">
+                    <h4>Links Rápidos</h4>
+                    <ul>
+                        <li><a href="#sobre">Sobre Nós</a></li>
+                        <li><a href="#especialidades">Especialidades</a></li>
+                        <li><a href="#cardapio">Cardápio</a></li>
+                        <li><a href="#contato">Contato</a></li>
+                    </ul>
+                </div>
+                <div class="footer-contato">
+                    <h4>Contato</h4>
+                    <p>Praça Lima Duarte, 39<br>Chácara das Pedras - Porto Alegre/RS</p>
+                    <p>Tel: (51) 3019-1003</p>
+                    <p>WhatsApp: (51) 98117-1300</p>
+                </div>
+                <div class="footer-horario">
+                    <h4>Horário</h4>
+                    <p>Segunda a Sábado<br>07h às 19h30</p>
+                    <p>Domingo: Fechado</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Engenho do Pão. Todos os direitos reservados.</p>
+                <p>CNPJ: 05.840.556/0001-00</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
