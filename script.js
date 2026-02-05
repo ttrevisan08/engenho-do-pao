@@ -246,7 +246,7 @@ document.addEventListener('DOMContentLoaded', function() {
         if (isMobile) {
             // Mobile: WhatsApp encomendas button
             const link = document.createElement('a');
-            link.href = 'https://wa.me/5551981171300';
+            link.href = 'https://wa.me/5551982091084';
             link.target = '_blank';
             link.className = 'fab-whatsapp';
             link.setAttribute('aria-label', 'Fazer encomenda via WhatsApp');
