@@ -488,76 +488,101 @@ ul {
 }
 
 /* ---------- Especialidades Section ---------- */
-.especialidades-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: var(--spacing-lg);
+.especialidades-scroll {
+    display: flex;
+    gap: var(--spacing-md);
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+    padding-bottom: var(--spacing-md);
+    scrollbar-width: thin;
+    scrollbar-color: var(--color-primary-light) transparent;
 }
 
-.especialidade-card {
+.especialidades-scroll::-webkit-scrollbar {
+    height: 4px;
+}
+
+.especialidades-scroll::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+.especialidades-scroll::-webkit-scrollbar-thumb {
+    background-color: var(--color-primary-light);
+    border-radius: var(--radius-full);
+}
+
+.especialidade-chip {
     position: relative;
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-md);
+    min-width: 280px;
+    flex-shrink: 0;
+    scroll-snap-align: start;
     background-color: var(--color-white);
-    padding: var(--spacing-xl);
+    padding: var(--spacing-lg);
     border-radius: var(--radius-lg);
     box-shadow: var(--shadow-sm);
     transition: all var(--transition-base);
+    cursor: default;
 }
 
-.especialidade-card:hover {
-    transform: translateY(-4px);
+.especialidade-chip:hover {
+    transform: translateY(-3px);
     box-shadow: var(--shadow-lg);
 }
 
-.especialidade-card.featured {
-    grid-row: span 2;
+.especialidade-chip.featured {
     background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-primary-dark) 100%);
+    min-width: 320px;
+}
+
+.especialidade-chip.featured h3,
+.especialidade-chip.featured p {
     color: var(--color-white);
 }
 
-.especialidade-card.featured h3,
-.especialidade-card.featured p {
-    color: var(--color-white);
-}
-
-.especialidade-card.featured .card-icon {
-    background-color: rgba(255, 255, 255, 0.2);
-}
-
-.card-icon {
+.chip-icon {
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 60px;
-    height: 60px;
+    width: 52px;
+    height: 52px;
     background-color: var(--color-cream);
     border-radius: var(--radius-lg);
-    font-size: 1.75rem;
-    margin-bottom: var(--spacing-lg);
+    font-size: 1.5rem;
+    flex-shrink: 0;
 }
 
-.especialidade-card h3 {
+.especialidade-chip.featured .chip-icon {
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
+.chip-text h3 {
     font-family: var(--font-display);
-    font-size: 1.25rem;
+    font-size: 1.0625rem;
     font-weight: 600;
     color: var(--color-gray-900);
-    margin-bottom: var(--spacing-sm);
+    margin-bottom: 2px;
 }
 
-.especialidade-card p {
-    font-size: 0.9375rem;
+.chip-text p {
+    font-size: 0.8125rem;
     color: var(--color-gray-500);
-    line-height: 1.6;
+    line-height: 1.4;
+    white-space: nowrap;
 }
 
 .card-badge {
     position: absolute;
-    top: var(--spacing-lg);
-    right: var(--spacing-lg);
-    font-size: 0.6875rem;
+    top: var(--spacing-sm);
+    right: var(--spacing-sm);
+    font-size: 0.625rem;
     font-weight: 600;
     text-transform: uppercase;
     letter-spacing: 0.05em;
-    padding: var(--spacing-xs) var(--spacing-sm);
+    padding: 2px var(--spacing-sm);
     background-color: var(--color-accent);
     color: var(--color-primary);
     border-radius: var(--radius-sm);
@@ -682,31 +707,53 @@ ul {
 }
 
 /* ---------- Depoimentos Section ---------- */
-.depoimentos-grid {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: var(--spacing-lg);
-    margin-bottom: var(--spacing-3xl);
+.depoimentos-carousel {
+    max-width: 640px;
+    margin: 0 auto var(--spacing-3xl);
+    text-align: center;
+    position: relative;
 }
 
-.depoimento-card {
-    background-color: var(--color-white);
-    padding: var(--spacing-xl);
-    border-radius: var(--radius-lg);
-    box-shadow: var(--shadow-sm);
+.carousel-track {
+    position: relative;
+    min-height: 220px;
 }
 
-.depoimento-rating {
-    font-size: 1rem;
-    margin-bottom: var(--spacing-md);
+.depoimento-slide {
+    position: absolute;
+    inset: 0;
+    opacity: 0;
+    transform: translateY(12px);
+    transition: opacity 0.5s ease, transform 0.5s ease;
+    pointer-events: none;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.depoimento-slide.active {
+    opacity: 1;
+    transform: translateY(0);
+    pointer-events: auto;
+    position: relative;
+}
+
+.depoimento-quote {
+    font-family: var(--font-display);
+    font-size: 4rem;
+    line-height: 1;
+    color: var(--color-accent);
+    user-select: none;
+    margin-bottom: -0.25rem;
 }
 
 .depoimento-text {
-    font-size: 1.0625rem;
+    font-size: 1.1875rem;
     font-style: italic;
     color: var(--color-gray-700);
-    line-height: 1.7;
-    margin-bottom: var(--spacing-lg);
+    line-height: 1.8;
+    margin-bottom: var(--spacing-xl);
+    max-width: 560px;
 }
 
 .depoimento-author {
@@ -719,27 +766,66 @@ ul {
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 48px;
-    height: 48px;
+    width: 44px;
+    height: 44px;
     background-color: var(--color-primary);
     color: var(--color-white);
     font-weight: 600;
+    font-size: 0.9375rem;
     border-radius: var(--radius-full);
+    flex-shrink: 0;
 }
 
 .author-info {
     display: flex;
     flex-direction: column;
+    text-align: left;
 }
 
 .author-name {
     font-weight: 600;
     color: var(--color-gray-900);
+    font-size: 0.9375rem;
 }
 
 .author-source {
-    font-size: 0.8125rem;
+    font-size: 0.75rem;
     color: var(--color-gray-500);
+}
+
+.depoimento-rating {
+    font-size: 0.875rem;
+    margin-left: auto;
+}
+
+/* Carousel Dots */
+.carousel-dots {
+    display: flex;
+    justify-content: center;
+    gap: var(--spacing-sm);
+    margin-top: var(--spacing-lg);
+}
+
+.carousel-dot {
+    width: 10px;
+    height: 10px;
+    border-radius: var(--radius-full);
+    border: 2px solid var(--color-primary-light);
+    background: transparent;
+    cursor: pointer;
+    padding: 0;
+    transition: all var(--transition-base);
+}
+
+.carousel-dot:hover {
+    border-color: var(--color-primary);
+    background-color: rgba(93, 58, 26, 0.2);
+}
+
+.carousel-dot.active {
+    background-color: var(--color-primary);
+    border-color: var(--color-primary);
+    width: 28px;
 }
 
 .depoimentos-stats {
@@ -752,28 +838,33 @@ ul {
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: var(--spacing-sm);
+    gap: var(--spacing-xs);
     padding: var(--spacing-lg) var(--spacing-2xl);
     background-color: var(--color-white);
     border-radius: var(--radius-lg);
     box-shadow: var(--shadow-sm);
 }
 
-.rating-logo {
-    height: 24px;
-    width: auto;
-    object-fit: contain;
-}
-
-.rating-icon {
-    font-size: 1.5rem;
+.rating-platform {
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: var(--color-primary);
 }
 
 .rating-score {
     font-family: var(--font-display);
-    font-size: 1.5rem;
+    font-size: 2rem;
     font-weight: 700;
     color: var(--color-gray-900);
+    line-height: 1.2;
+}
+
+.rating-max {
+    font-size: 1rem;
+    font-weight: 400;
+    color: var(--color-gray-500);
 }
 
 .rating-reviews {
@@ -869,13 +960,30 @@ ul {
 }
 
 .contato-mapa {
+    align-self: start;
     border-radius: var(--radius-xl);
     overflow: hidden;
     box-shadow: var(--shadow-lg);
 }
 
 .contato-mapa iframe {
-    border-radius: var(--radius-xl) var(--radius-xl) 0 0;
+    display: block;
+}
+
+.mapa-link {
+    display: block;
+    text-align: center;
+    padding: var(--spacing-md) var(--spacing-lg);
+    font-size: 0.9375rem;
+    font-weight: 600;
+    color: var(--color-white);
+    background-color: var(--color-primary);
+    transition: background-color var(--transition-fast);
+}
+
+.mapa-link:hover {
+    background-color: var(--color-primary-dark);
+    color: var(--color-white);
 }
 
 /* ---------- CTA Final ---------- */
@@ -923,6 +1031,10 @@ ul {
 .footer-brand .logo {
     color: var(--color-white);
     margin-bottom: var(--spacing-md);
+}
+
+.footer-logo-img {
+    border-radius: var(--radius-md);
 }
 
 .footer-brand .logo .logo-text,
@@ -991,12 +1103,12 @@ ul {
         max-width: 100%;
     }
 
-    .especialidades-grid {
-        grid-template-columns: repeat(2, 1fr);
+    .especialidade-chip {
+        min-width: 260px;
     }
 
-    .especialidade-card.featured {
-        grid-row: span 1;
+    .especialidade-chip.featured {
+        min-width: 280px;
     }
 
     .contato-grid {
@@ -1015,6 +1127,12 @@ ul {
         --header-height: 70px;
     }
 
+    .header {
+        backdrop-filter: none !important;
+        -webkit-backdrop-filter: none !important;
+        background-color: rgba(255, 255, 255, 1) !important;
+    }
+
     .nav-menu {
         position: fixed;
         top: var(--header-height);
@@ -1023,18 +1141,38 @@ ul {
         bottom: 0;
         flex-direction: column;
         justify-content: flex-start;
-        padding: var(--spacing-2xl);
-        background-color: var(--color-white);
+        gap: 0;
+        padding: 0;
+        background: #2D1810 !important;
+        opacity: 1 !important;
         transform: translateX(100%);
         transition: transform var(--transition-base);
+        z-index: 9999;
+        -webkit-backdrop-filter: none;
+        backdrop-filter: none;
     }
 
     .nav-menu.active {
         transform: translateX(0);
     }
 
+    .nav-menu li {
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
     .nav-menu a {
+        display: block;
         font-size: 1.25rem;
+        font-weight: 500;
+        color: #D4D4D4 !important;
+        padding: var(--spacing-xl) var(--spacing-2xl);
+        transition: background-color var(--transition-fast), color var(--transition-fast);
+    }
+
+    .nav-menu a:hover,
+    .nav-menu a:active {
+        background-color: rgba(255, 255, 255, 0.08);
+        color: #F5C518 !important;
     }
 
     .nav-cta {
@@ -1062,16 +1200,20 @@ ul {
         height: 350px;
     }
 
-    .especialidades-grid {
-        grid-template-columns: 1fr;
+    .especialidade-chip {
+        min-width: 240px;
     }
 
     .menu-grid {
         grid-template-columns: 1fr;
     }
 
-    .depoimentos-grid {
-        grid-template-columns: 1fr;
+    .depoimento-text {
+        font-size: 1rem;
+    }
+
+    .carousel-track {
+        min-height: 240px;
     }
 
     .depoimentos-stats {

@@ -110,7 +110,7 @@ document.addEventListener('DOMContentLoaded', function() {
     }, observerOptions);
 
     // Observe elements for animation
-    document.querySelectorAll('.especialidade-card, .menu-item, .depoimento-card, .contato-item').forEach(el => {
+    document.querySelectorAll('.especialidade-chip, .menu-item, .contato-item').forEach(el => {
         el.style.opacity = '0';
         el.style.transform = 'translateY(20px)';
         el.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
@@ -238,66 +238,160 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     // ============================================
-    // Back to Top Button (optional)
+    // Floating Action Button
     // ============================================
-    const createBackToTop = () => {
-        const button = document.createElement('button');
-        button.innerHTML = '↑';
-        button.className = 'back-to-top';
-        button.setAttribute('aria-label', 'Voltar ao topo');
-        document.body.appendChild(button);
+    const createFloatingButton = () => {
+        const isMobile = window.matchMedia('(max-width: 768px)').matches;
 
-        // Add styles
-        const style = document.createElement('style');
-        style.textContent = `
-            .back-to-top {
-                position: fixed;
-                bottom: 2rem;
-                right: 2rem;
-                width: 50px;
-                height: 50px;
-                background-color: var(--color-primary);
-                color: white;
-                border: none;
-                border-radius: 50%;
-                font-size: 1.5rem;
-                cursor: pointer;
-                opacity: 0;
-                visibility: hidden;
-                transition: all 0.3s ease;
-                z-index: 999;
-                box-shadow: 0 4px 12px rgba(139, 69, 19, 0.3);
-            }
-            .back-to-top:hover {
-                background-color: var(--color-primary-dark);
-                transform: translateY(-3px);
-            }
-            .back-to-top.visible {
-                opacity: 1;
-                visibility: visible;
-            }
-        `;
-        document.head.appendChild(style);
+        if (isMobile) {
+            // Mobile: WhatsApp encomendas button
+            const link = document.createElement('a');
+            link.href = 'https://wa.me/5551981171300';
+            link.target = '_blank';
+            link.className = 'fab-whatsapp';
+            link.setAttribute('aria-label', 'Fazer encomenda via WhatsApp');
+            link.innerHTML = '📱 Encomendas';
+            document.body.appendChild(link);
 
-        // Show/hide button based on scroll position
-        window.addEventListener('scroll', () => {
-            if (window.scrollY > 500) {
-                button.classList.add('visible');
-            } else {
-                button.classList.remove('visible');
-            }
-        });
+            const style = document.createElement('style');
+            style.textContent = `
+                .fab-whatsapp {
+                    position: fixed;
+                    bottom: 1.25rem;
+                    right: 1.25rem;
+                    display: inline-flex;
+                    align-items: center;
+                    gap: 0.4rem;
+                    padding: 0.75rem 1.25rem;
+                    background-color: #25D366;
+                    color: white;
+                    font-family: var(--font-body);
+                    font-size: 0.875rem;
+                    font-weight: 600;
+                    border: none;
+                    border-radius: 9999px;
+                    cursor: pointer;
+                    z-index: 998;
+                    box-shadow: 0 4px 14px rgba(37, 211, 102, 0.4);
+                    text-decoration: none;
+                    transition: transform 0.2s ease, box-shadow 0.2s ease;
+                }
+                .fab-whatsapp:hover {
+                    transform: translateY(-2px);
+                    box-shadow: 0 6px 20px rgba(37, 211, 102, 0.5);
+                    color: white;
+                }
+            `;
+            document.head.appendChild(style);
+        } else {
+            // Desktop: Back to top button
+            const button = document.createElement('button');
+            button.innerHTML = '↑';
+            button.className = 'back-to-top';
+            button.setAttribute('aria-label', 'Voltar ao topo');
+            document.body.appendChild(button);
 
-        // Scroll to top on click
-        button.addEventListener('click', () => {
-            window.scrollTo({
-                top: 0,
-                behavior: 'smooth'
+            const style = document.createElement('style');
+            style.textContent = `
+                .back-to-top {
+                    position: fixed;
+                    bottom: 2rem;
+                    right: 2rem;
+                    width: 50px;
+                    height: 50px;
+                    background-color: var(--color-primary);
+                    color: white;
+                    border: none;
+                    border-radius: 50%;
+                    font-size: 1.5rem;
+                    cursor: pointer;
+                    opacity: 0;
+                    visibility: hidden;
+                    transition: all 0.3s ease;
+                    z-index: 999;
+                    box-shadow: 0 4px 12px rgba(139, 69, 19, 0.3);
+                }
+                .back-to-top:hover {
+                    background-color: var(--color-primary-dark);
+                    transform: translateY(-3px);
+                }
+                .back-to-top.visible {
+                    opacity: 1;
+                    visibility: visible;
+                }
+            `;
+            document.head.appendChild(style);
+
+            window.addEventListener('scroll', () => {
+                if (window.scrollY > 500) {
+                    button.classList.add('visible');
+                } else {
+                    button.classList.remove('visible');
+                }
             });
-        });
+
+            button.addEventListener('click', () => {
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+            });
+        }
     };
 
-    createBackToTop();
+    createFloatingButton();
+
+    // ============================================
+    // Depoimentos Carousel
+    // ============================================
+    const carouselTrack = document.querySelector('.carousel-track');
+    const slides = document.querySelectorAll('.depoimento-slide');
+    const dots = document.querySelectorAll('.carousel-dot');
+
+    if (carouselTrack && slides.length > 0) {
+        let currentSlide = 0;
+        let autoplayTimer = null;
+        const AUTOPLAY_DELAY = 5000;
+
+        function goToSlide(index) {
+            slides[currentSlide].classList.remove('active');
+            dots[currentSlide].classList.remove('active');
+            currentSlide = index;
+            slides[currentSlide].classList.add('active');
+            dots[currentSlide].classList.add('active');
+        }
+
+        function nextSlide() {
+            goToSlide((currentSlide + 1) % slides.length);
+        }
+
+        function startAutoplay() {
+            stopAutoplay();
+            autoplayTimer = setInterval(nextSlide, AUTOPLAY_DELAY);
+        }
+
+        function stopAutoplay() {
+            if (autoplayTimer) {
+                clearInterval(autoplayTimer);
+                autoplayTimer = null;
+            }
+        }
+
+        // Dot navigation
+        dots.forEach(dot => {
+            dot.addEventListener('click', function() {
+                const target = parseInt(this.getAttribute('data-slide'));
+                if (target !== currentSlide) {
+                    goToSlide(target);
+                    startAutoplay(); // Reset timer on manual navigation
+                }
+            });
+        });
+
+        // Pause on hover
+        carouselTrack.addEventListener('mouseenter', stopAutoplay);
+        carouselTrack.addEventListener('mouseleave', startAutoplay);
+
+        // Start autoplay
+        startAutoplay();
+    }
 
     // ============================================
     // Console Message
